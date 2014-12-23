@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Recete" table="Recete" catalog="Hbs" optimistic-lock="version">
+        <id name="receteid" type="int">
+            <column name="receteid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="birey" class="com.pojos.Birey" fetch="select">
+            <column name="tcno" length="11" />
+        </many-to-one>
+        <many-to-one name="doktor" class="com.pojos.Doktor" fetch="select">
+            <column name="dtcno" length="11" />
+        </many-to-one>
+        <many-to-one name="eczane" class="com.pojos.Eczane" fetch="select">
+            <column name="eid" />
+        </many-to-one>
+        <many-to-one name="hbirim" class="com.pojos.Hbirim" fetch="select">
+            <column name="hbid" />
+        </many-to-one>
+        <many-to-one name="ilacBilgi" class="com.pojos.IlacBilgi" fetch="select">
+            <column name="ibid" />
+        </many-to-one>
+        <property name="tarih" type="date">
+            <column name="tarih" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

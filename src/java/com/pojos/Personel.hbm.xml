@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Personel" table="Personel" catalog="Hbs" optimistic-lock="version">
+        <id name="tcno" type="string">
+            <column name="tcno" length="11" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adres" class="com.pojos.Adres" fetch="select">
+            <column name="adresid" />
+        </many-to-one>
+        <property name="ad" type="string">
+            <column name="ad" length="30" />
+        </property>
+        <property name="soyad" type="string">
+            <column name="soyad" length="30" />
+        </property>
+        <property name="dyeri" type="string">
+            <column name="dyeri" length="30" />
+        </property>
+        <property name="dtarih" type="date">
+            <column name="dtarih" length="10" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="30" />
+        </property>
+        <property name="mail" type="string">
+            <column name="mail" length="50" />
+        </property>
+        <property name="sifre" type="string">
+            <column name="sifre" length="15" />
+        </property>
+        <property name="tema" type="string">
+            <column name="tema" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Hasta Bilgi Sistemi</title>
+        <link rel = "stylesheet" type="text/css" href="login.css"/>
+
+    </h:head>
+    <h:body>
+        <div id="main">
+            <div id="header">
+                <img src="resimler/tcsb.png" width="150" height="180" style="margin-left: 45%;margin-top: 4%"/>
+            </div>
+            <div id="content">
+                <div id="left">
+                    <nav>
+
+                        <ul><li><p>&#10004; İnternet Tarayıcı Bağımsızlığı</p></li></ul><br/>
+                        <ul><li><p>&#10004; Birey Tedavi ve Reçete Bilgilerini Görme</p></li></ul><br/>
+                        <ul><li><p>&#10004; İlaç Bilgilerini Görme</p></li></ul><br/>
+                        <ul><li><p>&#10004; Hızlı Erişim Sağlayan Akıllı Menü</p></li></ul><br/>
+                        <ul><li><p>&#10004; Harita Üzerinden Hastane Konumlarını Görme</p></li></ul><br/>
+                        <ul><li><p>&#10004; Harita Üzerinden Eczane Konumlarını Görme</p></li></ul><br/>
+                        <ul><li><p>&#10004; Harita Üzerinden Birey Adresi İşaretleme</p></li></ul><br/>
+                        <ul><li><p>&#10004; Aile Bireylerini Otomatik Tanıma</p></li></ul><br/>
+
+                    </nav>
+                </div>
+                <div id="right">
+                    <section id="loginBox">
+                        <p:growl id="growl" showDetail="true" sticky="false" life="3000"/>
+                        <p:tabView dynamic="true" style="background: #f3f3f3">
+                            <p:tab title="Birey Girişi">
+                                <h:form styleClass="minimal" id="login"><br/>
+                                    <p:inputText id="tcno" value="#{loginBean.tcno}" required="true" style="min-height:30px;"/>
+                                    <p:watermark for="tcno" value="Birey TC No"/><br/>
+                                    <p:password id="sifre" value="#{loginBean.sifre}" required="true" style="min-height:30px;"/>
+                                    <p:watermark for="sifre" value="Şifre"/><br/>
+                                    <p:commandButton value="Temizle"  type="reset"/>
+                                    <p:commandButton value="Giriş" action="#{loginBean.bireyLogin()}"  style="float: right;margin-right: 2%;" actionListener="#{loginBean.gecersiz()}"
+                                                     styleClass="buton" update=":growl" />
+                                    <br/>
+                                </h:form>
+                            </p:tab>
+                            <p:tab title="Personel Girişi">
+                                <h:form styleClass="minimal" id="loginb"><br/>
+                                    <p:inputText id="tc" value="#{loginpBean.tc}" required="true" style="min-height:30px;"/>
+                                    <p:watermark for="tc" value="Personel TC No"/><br/>
+                                    <p:password id="sifr" value="#{loginpBean.sifr}" required="true" style="min-height:30px;"/>
+                                    <p:watermark for="sifr" value="Şifre"/><br/>
+                                    <p:commandButton value="Temizle"  type="reset" styleClass="buton"/>
+                                    <p:commandButton value="Giriş" action="#{loginpBean.personelLogin()}" style="float: right;margin-right: 2%;" styleClass="buton" update=":growl"/>
+                                    <br/>
+                                </h:form>
+                            </p:tab>
+                        </p:tabView>
+                    </section>
+                </div>
+            </div>
+            <div id="footer">
+                <ul id="alt">
+                    <li class="m1"><a href="#" >Hizmetlerimiz</a></li>
+                    <li class="m2"><a href="#" >Hakkımızda</a></li>
+                    <li class="m3"><a href="#" >Destek</a></li>
+                    <li class="m4"><a href="#" >İstek ve Önerileriniz</a></li>
+                </ul>
+            </div>
+        </div>
+        <h:form>
+            <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+            <p:dialog widgetVar="status" modal="true" showHeader="false" closable="false"
+                      resizable="false"  style="background:  transparent">
+                <img src="resimler/712.GIF" style="width: 64px;height: 64px;"/>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</html>

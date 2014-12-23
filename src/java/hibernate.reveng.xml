@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="Hbs"/>
+  <table-filter match-name="Adres"/>
+  <table-filter match-name="Konum"/>
+  <table-filter match-name="IlacBilgi"/>
+  <table-filter match-name="HBirim"/>
+  <table-filter match-name="KHastalik"/>
+  <table-filter match-name="Ilac"/>
+  <table-filter match-name="Recete"/>
+  <table-filter match-name="Doktor"/>
+  <table-filter match-name="Akraba"/>
+  <table-filter match-name="Personel"/>
+  <table-filter match-name="Birim"/>
+  <table-filter match-name="Doz"/>
+  <table-filter match-name="Eczane"/>
+  <table-filter match-name="Durum"/>
+  <table-filter match-name="Hastane"/>
+  <table-filter match-name="HTanim"/>
+  <table-filter match-name="Aile"/>
+  <table-filter match-name="Birey"/>
+</hibernate-reverse-engineering>

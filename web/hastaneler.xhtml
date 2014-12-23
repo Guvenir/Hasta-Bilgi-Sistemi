@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Anasayfa</title>
+        <link rel = "stylesheet" type="text/css" href="style.css"/>
+        <script src="http://maps.google.com/maps/api/js?sensor=true|false"
+        type="text/javascript"></script>
+        <h:outputStylesheet library="awesome" name="css/font-awesome.css"/>
+    </h:head>
+    <h:body>
+        <div id="main">
+            <div id="header">
+                <img src="resimler/tcsb.png" width="100" height="120" style="margin-left: 45%;margin-top: 1%;"/>
+            </div>
+            <h:form>
+                <p:growl id="messages"/>
+
+                <p:menubar style="font-size: 12px;" id="menu">
+                    <p:menuitem value="Anasayfa" icon="fa fa-home" action="anasayfa"/>
+
+                    <p:menuitem value="Hastaneler" icon="fa fa-hospital-o" action="hastaneler"/>
+
+                    <p:menuitem value="Eczaneler" icon="fa fa-medkit" action="eczaneler"/>
+
+                    <p:menuitem value="İlaçlar" icon="fa fa-heart-o" action="ilaclar"/>
+
+                    <p:menuitem value="Ayarlar" icon="fa fa-gears" action="ayarlar"/>
+
+                    <p:menuitem value="Yardım" icon="fa fa-question-circle" action="yardım"/>
+
+
+                    <f:facet name="options">
+                        <p:inputText style="margin-right:10px" placeholder="Search"/>
+                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink"  >
+                            <p:confirm header="Güvenli Çıkış" message="Emin misiniz?" icon="ui-icon-alert" />
+                        </p:commandButton>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                            <p:commandButton value="Evet" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" action="#{loginBean.logout()}"/>
+                            <p:commandButton value="Hayır"  styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+
+                </p:menubar>
+                <p:separator />
+                <p:sticky target="menu"/>
+                <p:dialog widgetVar="exit" draggable="true"  modal="true" showEffect="fade" showHeader="false" hideEffect="fade" resizable="false">
+                    <h:outputText value="Güvenli Bir Şekilde Çıkış Yapmak İstiyormusunuz?" style="font-size: 15px"/><br/><br/>
+                    <p:commandButton value="Evet" action="#{loginBean.logout()}"/>
+                </p:dialog>
+            </h:form>
+            <div id="content">
+
+                <h:form id="form">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:panel header="Yerleşim Yerini Seçiniz" style="margin-bottom:10px;">
+                        <br/> <br/>
+                        <h:panelGrid columns="6" cellpadding="15" style="margin-left: 20%">
+                            <p:outputLabel for="country" value="İl : " />
+                            <p:selectOneMenu id="country" value="#{dropDownBean.country}" style="width:150px">
+                                <p:ajax listener="#{dropDownBean.onCountryChange}" update="city" />
+                                <f:selectItem itemLabel="İl Seçiniz" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{dropDownBean.countries}" />
+                            </p:selectOneMenu>
+                            <p:outputLabel for="city" value="İlçe : " />
+                            <p:selectOneMenu id="city" value="#{dropDownBean.city}" style="width:150px">
+                                <p:ajax listener="#{dropDownBean.onCityChange()}" update="hstn"/>
+                                <f:selectItem itemLabel="İlçe Seçiniz" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{dropDownBean.cities}" />
+                            </p:selectOneMenu>
+                            <p:outputLabel for="hstn" value="Hastane :"/>
+                            <p:selectOneMenu id="hstn"  value="#{dropDownBean.getirHastane()}" style="width:150px">
+                                <p:ajax listener="#{dropDownBean.hKonum()}" update="knm"/>
+                                <f:selectItem itemLabel="Hastane Seçiniz"  itemValue="#{dropDownBean.hastane}" noSelectionOption="true" />
+                                <f:selectItems value="#{dropDownBean.hastane}" var="hstn" itemValue="#{hstn}" itemLabel="#{hstn.ad}" />
+                            </p:selectOneMenu>
+                        </h:panelGrid><br/> <br/>
+                        <br/><br/>
+                        <p:gmap id="knm" center="#{dropDownBean.hKonum()}" zoom="15" type="HYBRID"
+                                style="width:100%;height:500px" model="#{dropDownBean.model}"/>
+                    </p:panel>
+
+                </h:form>
+
+            </div>
+            <div id="footer">
+                <ul id="alt">
+                    <li class="m1"><a href="#" >&spades;  Powered By Guvenir - 2014</a></li>
+                </ul>
+            </div>
+        </div>
+        <h:form>
+            <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+            <p:dialog widgetVar="status" modal="true" showHeader="false" closable="false" resizable="false" style="background:  transparent">
+                <img src="resimler/712.GIF" style="width: 64px;height: 64px;"/>
+            </p:dialog>
+            <h:outputStylesheet library="primefaces-#{loginBean.temaGetir()}" name="theme.css" />
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Ilac" table="Ilac" catalog="Hbs" optimistic-lock="version">
+        <id name="iid" type="int">
+            <column name="iid" />
+            <generator class="assigned" />
+        </id>
+        <property name="iad" type="string">
+            <column name="iad" length="30" />
+        </property>
+        <property name="sgk" type="string">
+            <column name="SGK" length="10" />
+        </property>
+        <property name="etkenmadde" type="string">
+            <column name="etkenmadde" length="30" />
+        </property>
+        <property name="kullanim" type="string">
+            <column name="kullanim" length="30" />
+        </property>
+        <property name="aciklama" type="string">
+            <column name="aciklama" length="30" />
+        </property>
+        <set name="ilacBilgis" table="IlacBilgi" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="iid" />
+            </key>
+            <one-to-many class="com.pojos.IlacBilgi" />
+        </set>
+    </class>
+</hibernate-mapping>

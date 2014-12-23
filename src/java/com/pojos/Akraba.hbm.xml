@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Akraba" table="Akraba" catalog="Hbs" optimistic-lock="version">
+        <id name="akrabaid" type="int">
+            <column name="akrabaid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="aile" class="com.pojos.Aile" fetch="select">
+            <column name="aileid" />
+        </many-to-one>
+        <many-to-one name="birey" class="com.pojos.Birey" fetch="select">
+            <column name="tcno" length="11" />
+        </many-to-one>
+        <many-to-one name="durum" class="com.pojos.Durum" fetch="select">
+            <column name="did" />
+        </many-to-one>
+        <many-to-one name="konum" class="com.pojos.Konum" fetch="select">
+            <column name="kid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

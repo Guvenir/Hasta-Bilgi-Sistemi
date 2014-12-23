@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Hbs?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">12345</property>
+    <mapping resource="com/pojos/Durum.hbm.xml"/>
+    <mapping resource="com/pojos/Konum.hbm.xml"/>
+    <mapping resource="com/pojos/Hbirim.hbm.xml"/>
+    <mapping resource="com/pojos/Ilac.hbm.xml"/>
+    <mapping resource="com/pojos/Personel.hbm.xml"/>
+    <mapping resource="com/pojos/Doz.hbm.xml"/>
+    <mapping resource="com/pojos/Eczane.hbm.xml"/>
+    <mapping resource="com/pojos/Aile.hbm.xml"/>
+    <mapping resource="com/pojos/Hastane.hbm.xml"/>
+    <mapping resource="com/pojos/Adres.hbm.xml"/>
+    <mapping resource="com/pojos/Akraba.hbm.xml"/>
+    <mapping resource="com/pojos/Birey.hbm.xml"/>
+    <mapping resource="com/pojos/Doktor.hbm.xml"/>
+    <mapping resource="com/pojos/Birim.hbm.xml"/>
+    <mapping resource="com/pojos/IlacBilgi.hbm.xml"/>
+    <mapping resource="com/pojos/Khastalik.hbm.xml"/>
+    <mapping resource="com/pojos/Recete.hbm.xml"/>
+    <mapping resource="com/pojos/Htanim.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

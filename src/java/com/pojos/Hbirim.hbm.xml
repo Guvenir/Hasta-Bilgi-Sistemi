@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Hbirim" table="HBirim" catalog="Hbs" optimistic-lock="version">
+        <id name="hbid" type="int">
+            <column name="hbid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="birim" class="com.pojos.Birim" fetch="select">
+            <column name="bid" />
+        </many-to-one>
+        <many-to-one name="hastane" class="com.pojos.Hastane" fetch="select">
+            <column name="hid" />
+        </many-to-one>
+        <set name="recetes" table="Recete" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="hbid" />
+            </key>
+            <one-to-many class="com.pojos.Recete" />
+        </set>
+    </class>
+</hibernate-mapping>

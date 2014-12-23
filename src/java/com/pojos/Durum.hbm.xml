@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Durum" table="Durum" catalog="Hbs" optimistic-lock="version">
+        <id name="did" type="int">
+            <column name="did" />
+            <generator class="assigned" />
+        </id>
+        <property name="tanim" type="string">
+            <column name="tanim" length="30" />
+        </property>
+        <set name="akrabas" table="Akraba" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="did" />
+            </key>
+            <one-to-many class="com.pojos.Akraba" />
+        </set>
+    </class>
+</hibernate-mapping>

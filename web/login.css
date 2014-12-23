@@ -1,0 +1,217 @@
+#main{
+    width:100%;
+    min-width:780px;
+    margin:0px;
+    padding:0px;
+    font-family:Arial;
+    scroll:hidden;	
+}
+#header{
+	
+    width: 100%;
+    height:150px;
+    scroll:hidden;
+    margin:0px;
+    padding:0px;
+    background:url("resimler/bwall.png");
+}
+#content{
+    margin:0px;
+    padding:0px;
+    width: 100%;
+    background-image:url("resimler/orta/png");
+}
+#left{
+    margin:0px;
+    padding:0px;
+    width: 50%;
+    float:left;
+    min-height:500px; 
+    background:url("resimler/orta.png");
+}
+#right{
+    margin:0px;
+    padding:0px;
+    width: 50%;
+    float:left;
+    min-height:500px;
+    background:url("resimler/orta.png");
+}
+#footer{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:92.5px;
+    min-height:3em;
+    float:left;
+    clear: both;
+    text-align: center;
+    color: white;
+    font-size: 80%;
+    background-image:url("resimler/bwall.png");
+    display:block;
+}
+ul li {
+    font-size:100%;
+    display:block;
+}
+*{margin:0px;padding:0px;font-size: 15px;font-family: Arial;}
+body{scroll:hidden;margin:0px;
+     padding:0px;background:url("resimler/wwall.png");}
+a {
+    text-decoration:none;
+}
+.resim img{margin-top:2%;}
+nav{
+    width:100%;
+    margin-left:5%;
+    margin-top: 15%;
+}
+nav ul li p {
+    font-size:100%;
+    margin-left:12%;
+}
+
+.baslik {
+    margin-top:10%;
+    margin-left:5%;
+}
+#footer ul#alt li{float:left;display:block; width:23%;margin-top:3%;margin-bottom:2%;}
+#footer ul#alt li a{color:#fff;}
+#footer ul#alt li a:hover{font-size: 18px; transition: 0.5s;}
+h2 {
+
+    color:#000;
+    font-size: x-large;
+    font-weight: 200;
+    padding: 0px;
+    width: 60%;
+    margin-top:10%;
+    text-align: center;
+}
+h3{
+    background: #cc0000; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cc0000 0%, #cc0000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cc0000), color-stop(100%,#cc0000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cc0000 0%,#cc0000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
+    text-align:center;
+    position: relative;
+    color: #fff;
+    font: 18px/130% Arial, sans-serif;
+    padding: 10px;
+    clear: both;
+    margin: 10px;
+    font-family:Arial;
+    font-size:140%;
+}
+h3:after{
+    content: '';
+    display: block;
+    width: 10px;
+    position: absolute;
+    right: -10px;
+    height: 100%;
+    top: 0;
+    background: transparent url('data:image/svg+xml; charset=utf-8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><path d="m0,0 l10,10 l-10,10 l-0,-20z" stroke-width="1.5" fill=" #cf0404"/></svg>') 0 0 no-repeat;
+}
+/*SECTION CONTAINER*/
+section#loginBox {
+    background-color:#e8e8e8;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+    /*box-shadow: 10px 10px 10px rgba(255,255,255,0.2) inset, 0 0 10px rgba(0,0,0,0.2);
+    margin: 2%; /*aligns center*/
+    box-shadow:         0px 0px 5px 3px rgba(50, 50, 50, 0.5);
+    margin-top:15%;
+    margin-right: 5%;
+    margin-bottom:10%;
+    margin-left:20%;
+    /*padding:10%;
+    padding-left:5%;
+    padding-top:2%;*/
+    padding: 0px;
+    width: 50%;
+    height:60%;
+    margin-left: 5%;
+    min-width: 300px;
+    float: right;
+}
+
+section#saveBox {
+    background-color:#e8e8e8;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 0 4px rgba(0,0,0,0.2);
+    margin: 2%; /*aligns center*/
+    margin-top:10%;
+    margin-bottom:10%;
+    padding:10%;
+    padding-left:7%;
+    padding-top:2%;
+    width: 30%;
+    height:60%;
+    margin-left: 25%;
+}
+
+/*FORM*/
+form.minimal label {
+    display: block;
+    margin: 6px 0;
+
+}
+
+form.minimal input[type="text"],
+form.minimal input[type="email"],
+form.minimal input[type="number"],
+form.minimal input[type="search"],
+form.minimal input[type="password"],
+form.minimal textarea {
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb( 186, 186, 186 );
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: block;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 100%;
+    margin: 6px 0 12px 0;
+    padding: 1%;	
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    width: 96%;/*Text uzunluğu buradan ayarlanıyor*/
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+form.minimal input[type="text"]:focus,
+form.minimal input[type="email"]:focus,
+form.minimal input[type="number"]:focus,
+form.minimal input[type="search"]:focus,
+form.minimal input[type="password"]:focus,
+form.minimal textarea:focus,
+form.minimal select:focus { 
+    border-color: #4195fc;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    color: rgb(0,0,0);
+}
+
+form.minimal input[type="text"]:invalid:focus,
+form.minimal input[type="email"]:invalid:focus,
+form.minimal input[type="number"]:invalid:focus,
+form.minimal input[type="search"]:invalid:focus,
+form.minimal input[type="password"]:invalid:focus,
+form.minimal textarea:invalid:focus,
+form.minimal select:invalid:focus { 
+    border-color: rgb(248,66,66);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+}

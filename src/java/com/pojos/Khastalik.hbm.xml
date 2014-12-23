@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Khastalik" table="KHastalik" catalog="Hbs" optimistic-lock="version">
+        <composite-id name="id" class="com.pojos.KhastalikId">
+            <key-property name="tcno" type="string">
+                <column name="tcno" length="11" />
+            </key-property>
+            <key-property name="htid" type="java.lang.Integer">
+                <column name="htid" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="birey" class="com.pojos.Birey" update="false" insert="false" fetch="select">
+            <column name="tcno" length="11" />
+        </many-to-one>
+        <many-to-one name="htanim" class="com.pojos.Htanim" update="false" insert="false" fetch="select">
+            <column name="htid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

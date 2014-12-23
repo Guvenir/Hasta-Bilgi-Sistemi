@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01.Ara.2014 13:53:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Adres" table="Adres" catalog="Hbs" optimistic-lock="version">
+        <id name="adresid" type="int">
+            <column name="adresid" />
+            <generator class="assigned" />
+        </id>
+        <property name="cadde" type="string">
+            <column name="cadde" length="30" />
+        </property>
+        <property name="mahalle" type="string">
+            <column name="mahalle" length="30" />
+        </property>
+        <property name="sokak" type="string">
+            <column name="sokak" length="30" />
+        </property>
+        <property name="apt" type="string">
+            <column name="apt" length="30" />
+        </property>
+        <property name="diskapi" type="java.lang.Integer">
+            <column name="diskapi" />
+        </property>
+        <property name="ickapi" type="java.lang.Integer">
+            <column name="ickapi" />
+        </property>
+        <property name="postakod" type="java.lang.Integer">
+            <column name="postakod" />
+        </property>
+        <property name="il" type="string">
+            <column name="il" length="30" />
+        </property>
+        <property name="ilce" type="string">
+            <column name="ilce" length="30" />
+        </property>
+        <property name="konum" type="string">
+            <column name="konum" length="30" />
+        </property>
+        <set name="personels" table="Personel" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="adresid" />
+            </key>
+            <one-to-many class="com.pojos.Personel" />
+        </set>
+        <set name="bireys" table="Birey" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="adresid" />
+            </key>
+            <one-to-many class="com.pojos.Birey" />
+        </set>
+    </class>
+</hibernate-mapping>
