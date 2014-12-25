@@ -301,7 +301,7 @@ INSERT INTO `Aile`(`aileid`,`soyad`,`il`) VALUES ( '3', 'Gümüş', 'Kayseri' );
 
 
 -- Dump data of "Akraba" -----------------------------------
-INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '1', '26897106832', '2', '2', '1' );
+INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '1', '26897106822', '2', '2', '1' );
 INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '2', '25867415269', '2', '1', '1' );
 INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '3', '30313233340', '2', '3', NULL );
 INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '4', '30313233341', '2', '3', NULL );
@@ -311,7 +311,7 @@ INSERT INTO `Akraba`(`akrabaid`,`tcno`,`aileid`,`kid`,`did`) VALUES ( '5', '3031
 
 -- Dump data of "Birey" ------------------------------------
 INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '25867415269', 'Ayşe', 'Yiğit', 'Kayseri', '1980-02-20', '05348888888', '1', NULL, '12345', NULL );
-INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '26897106832', 'Ali', 'Yiğit', 'Kayseri', '1980-10-10', '05349999999', '1', NULL, '12345', NULL );
+INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '26897106822', 'Ali', 'Yiğit', 'Kayseri', '1980-10-10', '05349999999', '1', NULL, '12345', NULL );
 INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '30313233340', 'Ahmet', 'Yiğit', 'Kayseri', '2006-10-25', '', '1', NULL, '12345', NULL );
 INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '30313233341', 'Fatma', 'Yiğit', 'Kayseri', '2010-04-12', NULL, '1', NULL, '12345', NULL );
 INSERT INTO `Birey`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mail`,`sifre`,`tema`) VALUES ( '30313233342', 'Ömer', 'Yiğit', 'Kayseri', '2014-02-25', NULL, '1', NULL, '12345', NULL );
@@ -427,8 +427,8 @@ INSERT INTO `IlacBilgi`(`ibid`,`iid`,`dozid`) VALUES ( '6', '2', '6' );
 
 
 -- Dump data of "KHastalik" --------------------------------
-INSERT INTO `KHastalik`(`tcno`,`htid`) VALUES ( '26897106832', '2' );
-INSERT INTO `KHastalik`(`tcno`,`htid`) VALUES ( '26897106832', '3' );
+INSERT INTO `KHastalik`(`tcno`,`htid`) VALUES ( '26897106822', '2' );
+INSERT INTO `KHastalik`(`tcno`,`htid`) VALUES ( '26897106822', '3' );
 -- ---------------------------------------------------------
 
 
@@ -446,9 +446,9 @@ INSERT INTO `Personel`(`tcno`,`ad`,`soyad`,`dyeri`,`dtarih`,`tel`,`adresid`,`mai
 
 
 -- Dump data of "Recete" -----------------------------------
-INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '1', '26897106832', '2', '20212223240', '1', NULL, '2014-11-26' );
-INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '2', '26897106832', '2', '20212223240', '2', NULL, '2014-11-30' );
-INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '3', '26897106832', '2', '20212223241', '3', NULL, '2014-12-18' );
+INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '1', '26897106822', '2', '20212223240', '1', NULL, '2014-11-26' );
+INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '2', '26897106822', '2', '20212223240', '2', NULL, '2014-11-30' );
+INSERT INTO `Recete`(`receteid`,`tcno`,`hbid`,`dtcno`,`ibid`,`eid`,`tarih`) VALUES ( '3', '26897106822', '2', '20212223241', '3', NULL, '2014-12-18' );
 -- ---------------------------------------------------------
 
 
